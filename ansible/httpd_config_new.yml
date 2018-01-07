@@ -1,0 +1,25 @@
+---
+
+- hosts: remote
+  user: root
+  tasks:
+  - name: INSTALL HTTPD BUT IN NEW WAY
+    yum:
+     name: httpd
+     state: latest
+    tags:
+     - install
+    
+  - name: RESTART HTTPD BUT IN NEW WAY  
+    service:
+     name: httpd
+     state: restarted
+    tags:
+     - restart
+  
+  - name: STOP THE HTTPD SERVER 
+    service:
+     name: httpd
+     state: stopped
+    tags:
+     - stop

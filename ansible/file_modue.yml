@@ -1,0 +1,14 @@
+---
+
+- hosts: remote
+  user: root
+
+  tasks:
+   - name: Creates directory
+     file: path=/mnt/www state=directory
+
+   - name : Created file
+     file : path=/mnt/www/test.txt state=touch mode: "u=rw,g=r,o=r"
+   
+   
+     

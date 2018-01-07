@@ -1,0 +1,6 @@
+---
+# TASKS FILE FOR APACHE SERVER
+
+- include: install.yml
+- include: configure.yml
+- include: service.yml

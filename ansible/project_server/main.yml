@@ -1,0 +1,12 @@
+---
+
+
+
+- name: INSTALL HTTPD FROM WEB ROLES
+  hosts: localhost
+  user: ansadm
+  become: yes
+  become_method: sudo
+  tasks:
+  roles:
+   - web

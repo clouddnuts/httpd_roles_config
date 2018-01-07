@@ -1,0 +1,11 @@
+---
+- hosts: secondarynode.ansible.com
+  user: root
+  vars:
+   file_content: "HELLO I AM DEVOPS"
+  tasks:
+  - name: COPY FILE
+    copy:
+     dest: /mnt/test/abc
+     content: "{{ file_content }}"
+ 

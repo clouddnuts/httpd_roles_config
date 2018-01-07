@@ -1,0 +1,13 @@
+---
+
+- hosts: remote
+  user: root
+  tasks:
+   - name: INSTALL HTTPD SERVER
+     yum: name=httpd state=latest
+
+   - name: START SERVICE HTTPD SERVER
+     service: name=httpd state=restarted
+
+   - name: COPY INDEX FILE TO WEB
+     copy: src=/var/www/html/index.html dest=/var/www/html/index.html

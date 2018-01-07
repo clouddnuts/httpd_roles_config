@@ -1,0 +1,9 @@
+---
+- hosts: remote
+  user: root
+  tasks:
+   - action: shell /mnt
+     register: list_files
+   - assert:
+       that:
+         - "'checkfile.txt' in list_files.stdout_lines"

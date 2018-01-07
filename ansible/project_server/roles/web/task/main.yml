@@ -1,0 +1,14 @@
+---
+
+- name: INSTALL HTTPD FROM TASKS
+  yum: name={{item}} state=latest
+  with_itams: 
+   - httpd
+   - httpd-tools
+
+- name: COPY INDEX FILE
+  copy: src=index.html /etc/var/www/html/index.html
+  tags: apache
+  notify: START SERVICE HTTPD
+  
+
